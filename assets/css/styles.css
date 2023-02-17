@@ -712,7 +712,9 @@ img {
 
 .footer__links{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .footer__link:hover{
@@ -834,9 +836,12 @@ background-color: var(--text-color-light);
   .about__container,
   .skills__container,
   .portofolio__content,
-  .contact__container,
   .footer__container{
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact__container{
+    grid-template-columns: repeat(3, 1fr);
   }
 .qualification__sections{
   display: grid;
