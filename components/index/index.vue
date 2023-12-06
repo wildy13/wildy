@@ -1,5 +1,5 @@
 <script setup>
-import { useMouseInElement } from '@vueuse/core'
+import { useMouseInElement   } from '@vueuse/core'
 
 const name = ref(null);
 const title1 = ref(null);
@@ -11,7 +11,7 @@ onMounted(() => {
         let lastScrollTop = 0;
 
         if (name.value) {
-            name.value.style.marginTop = value / 2 + 'px';
+            name.value.style.marginTop = value / 3 + 'px';
             if (value > lastScrollTop) {
                 name.value.classList.add('opacity-75');
                 name.value.classList.remove('opacity-100');
@@ -49,12 +49,14 @@ const cardTransform = computed(() => {
 
 <template>
     <div class="min-h-screen w-full bg-[#111111]">
-        <Navbar />
-        <section class="relative h-screen">
-            <div class="flex justify-center md:justify-start absolute top-1/3 w-full px-12">
-                <div ref="name">
-                    <div class="text-6xl text-center">Wildy</div>
-                    <div class="text-6xl text-justify">Johanes</div>
+        <section class="relative h-screen bg-no-repeat  bg-contain  bg-[url('/bg.jpeg')]">
+            <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
+                <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
+                    <div class="text-6xl md:text-9xl text-center">Wildy</div>
+                    <div class="text-6xl md:text-9xl text-center">Johanes</div>
+                </div>
+                <div class="relative md:flex justify-end right-0 hidden  w-full ">
+                    <img src="/bg.jpeg" class="w-96">
                 </div>
             </div>
 
