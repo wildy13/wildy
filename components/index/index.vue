@@ -62,7 +62,7 @@ const cardTransform = computed(() => {
 
             <div class="h-full  overflow-x-hidden relative">
                 <div
-                    class="flex items-center space-x-4 bg-[#1b1b1b] border-y-2 border-[#1d1d1d] h-20 md:h-12  absolute bottom-4 w-full">
+                    class="fixed flex items-center space-x-4 bg-[#1b1b1b] border-y-2 border-[#1d1d1d] h-20 md:h-12  absolute bottom-4 w-full">
                     <div class="animate-marquee whitespace-nowrap flex flex-row space-x-4 sm:text-xl">
                         <div>Fastify</div>
                         <div>Node JS</div>
