@@ -49,7 +49,7 @@ const cardTransform = computed(() => {
 
 <template>
     <div class="min-h-screen w-full bg-[#111111]">
-        <section class="relative h-screen bg-no-repeat  bg-cover md:bg-contain bg-fixed bg-[url('/bg.jpeg')]">
+        <section class="relative h-screen bg-no-repeat  bg-contain md:bg-contain bg-fixed bg-[url('/bg.jpeg')]">
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
                 <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
                     <div class="text-6xl md:text-9xl text-center">Wildy</div>
