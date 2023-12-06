@@ -4,6 +4,8 @@ import { useMouseInElement   } from '@vueuse/core'
 const name = ref(null);
 const title1 = ref(null);
 const project1 = ref(null);
+const image1= ref(null);
+const image2= ref(null);
 
 onMounted(() => {
     window.addEventListener('scroll', () => {
@@ -29,6 +31,12 @@ onMounted(() => {
                 name.value.classList.add('left-full');
             }
         }
+        if (image1.value) {
+            image1.value.style.transform = `translateX(-${value}px)`;
+        }
+        if (image2.value) {
+            image2.value.style.transform = `translateX(${value}px)`;
+        }
     });
 });
 
@@ -49,13 +57,16 @@ const cardTransform = computed(() => {
 
 <template>
     <div class="min-h-screen w-full bg-[#111111]">
-        <section class="relative h-screen bg-no-repeat  bg-contain md:bg-contain bg-fixed bg-[url('/bg.jpeg')]">
+        <section class="relative h-screen">
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
+                <div ref="image1" class="absolute  -top-56 left-0 md:flex justify-start   w-full ">
+                    <img src="/bg.jpeg" class="w-96">
+                </div>
                 <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
                     <div class="text-6xl md:text-9xl text-center">Wildy</div>
                     <div class="text-6xl md:text-9xl text-center">Johanes</div>
                 </div>
-                <div class="relative md:flex justify-end right-0 hidden  w-full ">
+                <div ref="image2" class="absolute top-0 right-0 md:flex justify-end hidden  w-full ">
                     <img src="/bg.jpeg" class="w-96">
                 </div>
             </div>
