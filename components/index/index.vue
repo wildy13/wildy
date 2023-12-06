@@ -49,7 +49,7 @@ const cardTransform = computed(() => {
 
 <template>
     <div class="min-h-screen w-full bg-[#111111]">
-        <section class="relative h-screen bg-no-repeat  bg-contain  bg-[url('/bg.jpeg')]">
+        <section class="relative h-screen bg-no-repeat  bg-cover md:bg-contain  bg-[url('/bg.jpeg')]">
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
                 <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
                     <div class="text-6xl md:text-9xl text-center">Wildy</div>
@@ -62,7 +62,7 @@ const cardTransform = computed(() => {
 
             <div class="h-full  overflow-x-hidden relative">
                 <div
-                    class="fixed flex items-center space-x-4 bg-[#1b1b1b] border-y-2 border-[#1d1d1d] h-20 md:h-12  absolute bottom-4 w-full">
+                    class="flex items-center space-x-4  h-20 md:h-12  absolute bottom-4 w-full">
                     <div class="animate-marquee whitespace-nowrap flex flex-row space-x-4 sm:text-xl">
                         <div>Fastify</div>
                         <div>Node JS</div>
