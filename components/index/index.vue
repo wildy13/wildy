@@ -1,11 +1,10 @@
 <script setup>
-import { useMouseInElement } from '@vueuse/core'
 
 const name = ref(null);
 const title1 = ref(null);
-const project = ref(null);
 const image1 = ref(null);
 const image2 = ref(null);
+
 
 onMounted(() => {
     window.addEventListener('scroll', () => {
@@ -39,27 +38,13 @@ onMounted(() => {
         }
     });
 });
-
-const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(project);
-
-const cardTransform = computed(() => {
-    const MAX_ROTATION = 6
-
-    const rX = (MAX_ROTATION / 2 - (elementY.value / elementHeight.value) * MAX_ROTATION).toFixed(2)
-    const rY = ((elementX.value / elementWidth.value) * MAX_ROTATION - MAX_ROTATION / 2).toFixed(2)
-
-    return isOutside.value
-        ? ''
-        : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`
-});
-
 </script>
 
 <template>
     <div class="min-h-screen w-full bg-[#111111] overflow-x-hidden">
         <section class="relative h-screen">
             <div ref="image1" class="absolute  top-0 left-0 md:flex justify-start   w-full ">
-                <img src="/bg.jpeg" class="w-96">
+                <img src="/bg.jpeg" class="md:w-96 bg-contain">
             </div>
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
                 <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
@@ -67,7 +52,7 @@ const cardTransform = computed(() => {
                     <div class="text-6xl md:text-9xl text-center">Johanes</div>
                 </div>
                 <div ref="image2" class="absolute top-0 right-0 md:flex justify-end hidden  w-full ">
-                    <img src="/bg.jpeg" class="w-96">
+                    <img src="/bg.jpeg" class="md:w-96  bg-contain">
                 </div>
             </div>
 
@@ -100,33 +85,8 @@ const cardTransform = computed(() => {
                 </div>
             </div>
         </section>
-        <section class="py-4 relative">
-            <div class="px-4  py-1 border-b-2 border-[#363030] text-xl">WHAT I DO</div>
-            <div v-motion-slide-visible-once-bottom :delay="500" class="px-4 py-2 text-2xl text-justify">
-                As a <span class="text-red-500">web developer</span>, I have a passion for seeking knowledge and experience.
-                can compete with times that are
-                changing too quickly and can work together with a team so that problems can be resolved.
-            </div>
-            <div v-motion-slide-visible-once-bottom :delay="500" class="px-4 py-2 text-2xl text-justify">
-                As a <span class="text-red-500">son</span>, I had dreams to make my parents happy so that I could live
-                happily in this world
-            </div>
-        </section>
-        <section ref="project" class="min-h-screen  pt-4 relative">
-            <div class="px-4  py-1 border-b-2 border-[#363030] text-xl">RECENT PROJECTS</div>
-            <div class="pt-2 flex flex-col md:flex-row px-7 md:space-x-6">
-                <div class="md:w-7/12" :style="{ transform: cardTransform, transition: 'transform 0.25s ease-out' }">
-                    <img src="/3d-asset-station.png" alt="3D Asset Station" class="h-auto w-full">
-                </div>
-                <div v-motion-slide-visible-once-left :delay="500" class="md:w-5/12 text-justify">
-                    <div class="text-xl font-semibold py-2">3D Asset Station</div>
-                    <div class="text-2xl ">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae ipsam maxime possimus corrupti
-                        nostrum fugiat eligendi sequi odit itaque fuga veritatis laudantium cum esse, ut numquam quae est
-                        fugit sapiente.
-                    </div>
-                </div>
-            </div>
-        </section>
+        <About />
+        <Project />
+        <Contact />
     </div>
 </template>
