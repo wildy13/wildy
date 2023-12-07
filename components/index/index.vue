@@ -1,11 +1,11 @@
 <script setup>
-import { useMouseInElement   } from '@vueuse/core'
+import { useMouseInElement } from '@vueuse/core'
 
 const name = ref(null);
 const title1 = ref(null);
 const project = ref(null);
-const image1= ref(null);
-const image2= ref(null);
+const image1 = ref(null);
+const image2 = ref(null);
 
 onMounted(() => {
     window.addEventListener('scroll', () => {
@@ -58,10 +58,10 @@ const cardTransform = computed(() => {
 <template>
     <div class="min-h-screen w-full bg-[#111111] overflow-x-hidden">
         <section class="relative h-screen">
+            <div ref="image1" class="absolute  top-0 left-0 md:flex justify-start   w-full ">
+                <img src="/bg.jpeg" class="w-96">
+            </div>
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
-                <div ref="image1" class="absolute  -top-56 left-0 md:flex justify-start   w-full ">
-                    <img src="/bg.jpeg" class="w-96">
-                </div>
                 <div ref="name" class="absolute -top-20 left-0 z-50 w-full">
                     <div class="text-6xl md:text-9xl text-center">Wildy</div>
                     <div class="text-6xl md:text-9xl text-center">Johanes</div>
@@ -72,8 +72,7 @@ const cardTransform = computed(() => {
             </div>
 
             <div class="h-full  overflow-x-hidden relative">
-                <div
-                    class="flex items-center space-x-4  h-20 md:h-12  absolute bottom-4 w-full">
+                <div class="flex items-center space-x-4  h-20 md:h-12  absolute bottom-4 w-full">
                     <div class="animate-marquee whitespace-nowrap flex flex-row space-x-4 sm:text-xl">
                         <div>Fastify</div>
                         <div>Node JS</div>
@@ -113,11 +112,10 @@ const cardTransform = computed(() => {
                 happily in this world
             </div>
         </section>
-        <section ref="project"  class="min-h-screen  pt-4 relative">
+        <section ref="project" class="min-h-screen  pt-4 relative">
             <div class="px-4  py-1 border-b-2 border-[#363030] text-xl">RECENT PROJECTS</div>
             <div class="pt-2 flex flex-col md:flex-row px-7 md:space-x-6">
-                <div class="md:w-7/12"
-                    :style="{ transform: cardTransform, transition: 'transform 0.25s ease-out' }">
+                <div class="md:w-7/12" :style="{ transform: cardTransform, transition: 'transform 0.25s ease-out' }">
                     <img src="/3d-asset-station.png" alt="3D Asset Station" class="h-auto w-full">
                 </div>
                 <div v-motion-slide-visible-once-left :delay="500" class="md:w-5/12 text-justify">
