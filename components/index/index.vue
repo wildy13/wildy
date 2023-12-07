@@ -3,7 +3,7 @@ import { useMouseInElement   } from '@vueuse/core'
 
 const name = ref(null);
 const title1 = ref(null);
-const project1 = ref(null);
+const project = ref(null);
 const image1= ref(null);
 const image2= ref(null);
 
@@ -40,7 +40,7 @@ onMounted(() => {
     });
 });
 
-const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(project1);
+const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(project);
 
 const cardTransform = computed(() => {
     const MAX_ROTATION = 6
@@ -113,10 +113,10 @@ const cardTransform = computed(() => {
                 happily in this world
             </div>
         </section>
-        <section class="min-h-screen  pt-4 relative">
+        <section ref="project"  class="min-h-screen  pt-4 relative">
             <div class="px-4  py-1 border-b-2 border-[#363030] text-xl">RECENT PROJECTS</div>
             <div class="pt-2 flex flex-col md:flex-row px-7 md:space-x-6">
-                <div ref="project1" class="md:w-7/12"
+                <div class="md:w-7/12"
                     :style="{ transform: cardTransform, transition: 'transform 0.25s ease-out' }">
                     <img src="/3d-asset-station.png" alt="3D Asset Station" class="h-auto w-full">
                 </div>
