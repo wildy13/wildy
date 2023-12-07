@@ -56,7 +56,7 @@ const cardTransform = computed(() => {
 </script>
 
 <template>
-    <div class="min-h-screen w-full bg-[#111111]">
+    <div class="min-h-screen w-full bg-[#111111] overflow-x-hidden">
         <section class="relative h-screen">
             <div class="flex justify-center md:justify-between absolute top-1/3 w-full px-12">
                 <div ref="image1" class="absolute  -top-56 left-0 md:flex justify-start   w-full ">
