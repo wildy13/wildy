@@ -18,7 +18,7 @@ const submit = (form) => {
     <section class="relative h-screen pt-4">
         <div class="px-4 py-1 border-b-2 border-[#363030] text-xl">GET IN TOUCH</div>
         <div class="flex flex-col md:flex-row md:justify-between h-5/6">
-            <div class="w-full md:w-1/2">
+            <div class="w-full">
                 <form @submit.prevent="submit(form)" class="pt-2 md:max-w-md">
                     <div class="flex flex-col px-7 space-y-2">
                         <div>
@@ -59,7 +59,7 @@ const submit = (form) => {
                     </div>
                 </form>
             </div>
-            <div class=" w-full md:w-1/2 px-7 pt-2">
+            <div class=" w-full px-7 pt-2">
                 <div>test</div>
             </div>
         </div>
