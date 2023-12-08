@@ -48,7 +48,7 @@ const submit = (form) => {
                                 placeholder="How can i help you?" required v-model="form.message"></textarea>
                         </div>
                         <div class="w-full flex  justify-center">
-                            <button type="submit" class="w-32 py-1 rounded-lg hover:focus:ring-blue-500">
+                            <button type="submit" class="w-32 py-1 rounded-lg hover:bg-blue-500 transition-colors">
                                 <template v-if="waiting">
                                     loading...
                                 </template>
@@ -61,10 +61,17 @@ const submit = (form) => {
                 </form>
             </div>
             <div class=" w-full px-7 pt-2">
+                <div class="text-center py-2">FOUND ME IN</div>
                 <div class="flex  flex-row space-x-4 justify-center">
-                    <IconFacebook />
-                    <IconInstagram />
-                    <IconLinkedin />
+                    <NuxtLink to="https://github.com/wildy13">
+                        <IconGithub />
+                    </NuxtLink>
+                    <nuxt-link to="https://instagram.com/jo.14m">
+                        <IconInstagram />
+                    </nuxt-link>
+                    <nuxt-link to="https://www.linkedin.com/in/wildy-simanjuntak-181a691a4/">
+                        <IconLinkedin />
+                    </nuxt-link>
                 </div>
             </div>
         </div>
