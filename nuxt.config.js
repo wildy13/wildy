@@ -20,7 +20,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['@/assets/css/tailwind.css', '@fontsource/syne/400.css'],
+  css: ['@/assets/css/tailwind.css', '@fontsource/syne/400.css', '@iconify-json/devicon'],
 
   modules: [
     '@vueuse/nuxt',

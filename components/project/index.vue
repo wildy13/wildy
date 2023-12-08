@@ -1,4 +1,5 @@
 <script setup>
+import { icons } from '@iconify-json/devicon';
 import { useMouseInElement } from '@vueuse/core'
 
 
@@ -30,6 +31,16 @@ const cardTransform = computed(() => {
                     This website for displaying the Repository and 3D models was created using Nuxt JS as the frontend and
                     Node JS as the backend. using Fastify JS as a router and using ThreeJS to control 3D models and using
                     other supporting packages such as styling, authentication and others.
+                </div>
+                <div>
+                    <div class="text-xl font-semibold py-2">Skills :</div>
+                    <div class="flex items-center space-x-4">
+                        <IconNodeJS />
+                        <IconNuxtJS />
+                        <IconMongoDB />
+                        <IconFastify />
+                        <IconTailwindCSS />
+                    </div>
                 </div>
             </div>
         </div>
