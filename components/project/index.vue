@@ -28,7 +28,7 @@ const cardTransform = computed(() => {
             <div v-motion-slide-visible-once-left :delay="500" class="md:w-5/12 text-justify">
                 <div class="text-xl font-semibold py-2">3D Asset Station</div>
                 <div class="text-2xl ">
-                    This website for displaying and Repository 3D models, The website was created using Nuxt JS as the frontend and
+                    This website for displaying the Repository and 3D models was created using Nuxt JS as the frontend and
                     Node JS as the backend. using Fastify JS as a router and using ThreeJS to control 3D models and using
                     other supporting packages such as styling, authentication and others.
                 </div>
