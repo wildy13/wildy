@@ -44,5 +44,28 @@ const cardTransform = computed(() => {
                 </div>
             </div>
         </div>
+        <div class="pt-2 flex flex-col md:flex-row px-7 md:space-x-6">
+            <div v-motion-slide-visible-once-left :delay="500" class="md:w-5/12 text-justify">
+                <div class="text-xl font-semibold py-2">Dinas Kesehatan Kota Batam</div>
+                <div class="text-2xl ">
+                    This website inputs citizen data to make referrals to hospitals in cities or provinces in Indonesia.
+                    this website was created using Nuxt JS as the frontend and Node JS as the backend. using fastify as a
+                    router and using Tailwind CSS as styling.
+                </div>
+                <div>
+                    <div class="text-xl font-semibold py-2">Skills :</div>
+                    <div class="flex items-center space-x-4">
+                        <IconNodeJS />
+                        <IconNuxtJS />
+                        <IconMongoDB />
+                        <IconFastify />
+                        <IconTailwindCSS />
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-7/12" :style="{ transform: cardTransform, transition: 'transform 0.25s ease-out' }">
+                <img src="/diskes.png" alt="3D Asset Station" class="h-auto w-full">
+            </div>
+        </div>
     </section>
 </template>
